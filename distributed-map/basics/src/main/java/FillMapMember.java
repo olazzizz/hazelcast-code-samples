@@ -6,7 +6,9 @@ import java.util.Map;
 public class FillMapMember {
 
     public static void main(String[] args) {
-        HazelcastInstance hz = Hazelcast.newHazelcastInstance();
+//        HazelcastInstance hz = Hazelcast.newHazelcastInstance();
+// Start the Hazelcast Client and connect to an already running Hazelcast Cluster on 127.0.0.1
+        HazelcastInstance hz = HazelcastClient.newHazelcastClient();
         Map<String, String> map = hz.getMap("map");
         map.put("1", "Tokyo");
         map.put("2", "Paris");
